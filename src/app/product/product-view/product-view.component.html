@@ -1,0 +1,12 @@
+<p>product-view works!</p>
+
+<pre>{{product | json}}</pre>
+
+
+<div >
+    <p *ngIf="product">  </p>
+        <p>{{product.id}}</p>
+        <p>{{product.title}}</p>
+        <img [src]="product.image" alt={{product.title}} />
+  
+</div>
