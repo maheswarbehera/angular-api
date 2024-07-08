@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../product.service';
-import { Category } from '../category';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
+import { Product } from '../../product';
+import { Category } from '../category';
 
 @Component({
   selector: 'app-category-view',
@@ -12,7 +13,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './category-view.component.css'
 })
 export class CategoryViewComponent implements OnInit{
-  category: Category = new Category();
+  category: string = '';
+  products: Product[] = [];
 
   constructor(
     private productService: ProductService,
@@ -23,13 +25,13 @@ export class CategoryViewComponent implements OnInit{
     console.log('catagory init');
 
     this.route.params.subscribe(params => {
-      const category = params['name']; 
-      console.log('cat name:', category);
+      this.category = params['name']; 
+      console.log('cat name:', this.category);
 
     // const category = "electronics";
-    this.productService.getCategoryByName(category).subscribe((res) => {
-      this.category = res;
-      console.log(this.category);
+    this.productService.getProductsByCategory(this.category).subscribe((res) => {
+      this.products = res;
+      console.log(this.products);
     })
     })
   }

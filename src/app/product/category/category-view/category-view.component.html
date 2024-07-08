@@ -1,9 +1,10 @@
 <p>category-view works!</p>
 
 
-<!-- <pre>{{category | json}}</pre> -->
+<!-- <pre>{{products | json}}</pre> -->
 
-<div *ngIf="category"> 
+<h2>Products in Category: {{ category }}</h2>
+<div *ngIf="products"> 
  <div class="container"> 
       <table class="table table-striped">
         <thead>
@@ -16,12 +17,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of category">
+          <tr *ngFor="let product of products ">
             <td>{{ product.id }}</td>
-            <!-- <td><a routerLink="/product/{{category.id}}" class="card-link btn btn-outline-primary btn-sm mt-3">{{ category.title }}</a></td>
-            <td>{{ category.description }}</td>
-            <td>{{ category.price }}</td>
-            <td>{{ category.category }}</td>  -->
+            <td><a routerLink="/product/{{product.id}}" class="card-link btn btn-outline-primary btn-sm mt-3">{{ product.title }}</a></td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.category }}</td> 
           </tr>
         </tbody>
       </table>

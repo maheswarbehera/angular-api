@@ -29,8 +29,8 @@ export class ProductService {
     return this.http.get<Category[]>(this.apiUrl + `categories` );
   }
 
-  getCategoryByName(name: string) {
-    return this.http.get<Category>(this.apiUrl + `category/${name}`);
+  getProductsByCategory(category: string) {
+    return this.http.get<Product[]>(this.apiUrl + `category/${category}`);
   }
 }
 
