@@ -27,7 +27,7 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl + `users?sort=${sort}`)
   }
 
-  addUser() {
-    // return this.http.post(this.apiUrl + 'users')
+  addUser(newUser: User) {
+    return this.http.post<User>(this.apiUrl + 'users', newUser)
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-add-user',
@@ -11,34 +12,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './add-user.component.css'
 })
 export class AddUserComponent{
+ 
 
-newUser: User = {
-  address: {
-    geolocation: {
-      lat: '',
-      long: ''
-    },
-    city: '',
-    street: '',
-    number: 0,
-    zipcode: ''
-  },
-  id: 0,
-  email: '',
-  username: '',
-  password: '',
-  name: {
-    firstname: '',
-    lastname: ''
-  },
-  phone: '',
-  __v: 0
-};
+  constructor(private userService: UserService) { }
+newUser = new User();
+
   onSubmit(): void {
-    // this.
-     console.log('New user', this.newUser);
-
-    //  this.newUser = { id: 0, name: '', email: '' };
+    this.userService.addUser(this.newUser).subscribe(data => {
+      console.log('New user', data);      
+    });
   }
 
 }

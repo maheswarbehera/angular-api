@@ -1,35 +1,33 @@
 <p>user-profile works!</p>
 
 
-<p>users works!</p> 
-
 <div *ngIf="user"> 
     <div class="container"> 
          <table class="table table-striped">
            <thead>
              <tr>
                <th>ID</th>
-               <th>Name</th>
+               <!-- <th>Name</th> -->
                <th>Username</th>
                <th>Email</th>
                <th>Phone</th>
                <th>Password</th>
-               <th>Address</th> 
-               <th>__v
-            </th> 
+               <!-- <th>Address</th> 
+               <th>__v </th> -->
+            
              </tr>
            </thead>
            <tbody>
              <!-- <tr *ngFor="user"> -->
              <tr >
                <td>{{ user.id }}</td>
-               <td>{{ user.name.firstname }} {{ user.name.lastname }}</td>
+               <!-- <td>{{ user.name.firstname }} {{ user.name.lastname }}</td> -->
                <td>{{ user.username }}</td>
                <td>{{ user.email }}</td>
                <td>{{ user.phone }}</td> 
                <td>{{ user.password }}</td>
-               <td>{{ user.address.city }}</td>
-               <td>{{ user.__v }}</td>
+               <!-- <td>{{ user.address.city }}</td>
+               <td>{{ user.__v }}</td> -->
              </tr>
            </tbody>
          </table>

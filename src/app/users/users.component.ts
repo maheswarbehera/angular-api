@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit{
   ngOnInit(): void {
     console.log('User init');
       
-      this.userService.sort('desc').subscribe((res) => {
+      this.userService.getUsers().subscribe((res) => {
         this.users = res;
         console.log( this.users);
       })

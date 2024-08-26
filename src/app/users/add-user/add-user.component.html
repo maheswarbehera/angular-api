@@ -4,15 +4,7 @@
 <!-- user-form.component.html -->
 
 <form (ngSubmit)="onSubmit()">
-    <!-- Name -->
-    <div>
-      <label for="firstname">First Name:</label>
-      <input type="text" id="firstname" name="firstname" [(ngModel)]="newUser.name.firstname" required>
-    </div>
-    <div>
-      <label for="lastname">Last Name:</label>
-      <input type="text" id="lastname" name="lastname" [(ngModel)]="newUser.name.lastname" required>
-    </div>
+    
   
     <!-- Username -->
     <div>
@@ -38,45 +30,7 @@
       <input type="tel" id="phone" name="phone" [(ngModel)]="newUser.phone">
     </div>
   
-    <!-- Address -->
-    <div>
-      <h3>Address:</h3>
-      <!-- City -->
-      <div>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" [(ngModel)]="newUser.address.city">
-      </div>
-      <!-- Street -->
-      <div>
-        <label for="street">Street:</label>
-        <input type="text" id="street" name="street" [(ngModel)]="newUser.address.street">
-      </div>
-      <!-- Number -->
-      <div>
-        <label for="number">Number:</label>
-        <input type="number" id="number" name="number" [(ngModel)]="newUser.address.number">
-      </div>
-      <!-- Zipcode -->
-      <div>
-        <label for="zipcode">Zipcode:</label>
-        <input type="text" id="zipcode" name="zipcode" [(ngModel)]="newUser.address.zipcode">
-      </div>
-      <!-- Geolocation -->
-      <div>
-        <h4>Geolocation:</h4>
-        <!-- Latitude -->
-        <div>
-          <label for="lat">Latitude:</label>
-          <input type="text" id="lat" name="lat" [(ngModel)]="newUser.address.geolocation.lat">
-        </div>
-        <!-- Longitude -->
-        <div>
-          <label for="long">Longitude:</label>
-          <input type="text" id="long" name="long" [(ngModel)]="newUser.address.geolocation.long">
-        </div>
-      </div>
-    </div>
-  
+   
     <button type="submit">Add User</button>
     <p>{{newUser | json}}</p>
   </form>

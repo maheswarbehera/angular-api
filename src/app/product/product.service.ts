@@ -11,7 +11,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  apiUrl = 'https://fakestoreapi.com/products/'
+  apiUrl: string = 'https://fakestoreapi.com/products/'
 
   getProducts() {
     return this.http.get<Product[]>(this.apiUrl);
@@ -30,7 +30,11 @@ export class ProductService {
   }
 
   getProductsByCategory(category: string) {
-    return this.http.get<Product[]>(this.apiUrl + `category/${category}`);
+    return this.http.get<Product[]>(`${this.apiUrl}category/${category}`);
+  }
+
+  addProduct(product : Product){
+    return this.http.post<Product>(this.apiUrl, {product});
   }
 }
 

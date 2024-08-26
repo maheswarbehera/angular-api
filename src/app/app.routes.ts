@@ -6,6 +6,8 @@ import { CategoryViewComponent } from './product/category/category-view/category
 import { UsersComponent } from './users/users.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
+
 
 export const routes: Routes = [
     { path: 'product', component: ProductComponent },
@@ -15,4 +17,5 @@ export const routes: Routes = [
     { path: 'users', component: UsersComponent }, 
     { path: 'user/:id', component: UserProfileComponent }, 
     { path: 'users/add/newuser', component: AddUserComponent }, 
+    { path: 'product/add/new', component: AddProductComponent }, 
 ];

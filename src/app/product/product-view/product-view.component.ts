@@ -27,4 +27,7 @@ export class ProductViewComponent implements OnInit{
       });
     });
    }
+   addToCart():any {
+    console.log('Add to cart clicked');
+   }
 }
